@@ -44,7 +44,7 @@ public class LibraryController : BaseController
         }, cancellationToken);
     }
 
-    [HttpGet("(Top10)")]
+    [HttpGet("GetTop10Books")]
     public Task<IActionResult> GetTop10Books(string genre, CancellationToken cancellationToken)
     {
         //[FromRoute] 
@@ -67,7 +67,7 @@ public class LibraryController : BaseController
         }, cancellationToken);
     }
 
-    [HttpGet("(BookInfo)")]
+    [HttpGet("GetBookInfo")]
     public Task<IActionResult> GetBookInfo(int id, CancellationToken cancellationToken)
     {
         return SafeExecute(async () => 
@@ -89,7 +89,7 @@ public class LibraryController : BaseController
         }, cancellationToken);
     }
 
-    [HttpPost("DeleteBook")]
+    [HttpDelete("DeleteBook")]
     public Task<IActionResult> DeleteBook(int id, string secretKey, CancellationToken cancellationToken)
     {
         return SafeExecute(async () => 
@@ -113,7 +113,7 @@ public class LibraryController : BaseController
     }
 
 
-    [HttpPut("CreateBook")]
+    [HttpPost("CreateBook")]
     public Task<IActionResult> CreateBook([FromBody]Book book, CancellationToken cancellationToken)
     {
         return SafeExecute(async () => 
@@ -140,7 +140,7 @@ public class LibraryController : BaseController
         }, cancellationToken);
     }
 
-    [HttpPut("SaveAReview")]
+    [HttpPost("SaveAReview")]
     public Task<IActionResult> SaveAReview(int id, string message, string reviewer, CancellationToken cancellationToken)
     {
         return SafeExecute(async () => 
@@ -164,7 +164,7 @@ public class LibraryController : BaseController
         }, cancellationToken);
     }
 
-    [HttpPut("RateABook")]
+    [HttpPost("RateABook")]
     public Task<IActionResult> RateABook(int id, int score, CancellationToken cancellationToken)
     {
         return SafeExecute(async () => 
