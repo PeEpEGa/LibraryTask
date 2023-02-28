@@ -24,7 +24,6 @@ public class LibraryController : BaseController
     [HttpGet("GetAllBooks")]
     public Task<IActionResult> GetBooks(string ord, CancellationToken cancellationToken)
     {
-        //[FromRoute] 
         return SafeExecute(async () => 
         {
             var query = new LibraryQuery
@@ -47,7 +46,6 @@ public class LibraryController : BaseController
     [HttpGet("GetTop10Books")]
     public Task<IActionResult> GetTop10Books(string genre, CancellationToken cancellationToken)
     {
-        //[FromRoute] 
         return SafeExecute(async () => 
         {
             var query = new LibraryQueryTop10

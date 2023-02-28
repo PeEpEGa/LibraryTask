@@ -21,11 +21,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
-//db
 builder.Services.AddHealthChecks();
-// builder.Services.AddDbContext<LibraryDbContext>(o => o.UseInMemoryDatabase("LibraryDb"));
-// builder.Services.AddMediatR(o => o.RegisterServicesFromAssemblies(typeof(LibraryQuery).Assembly));
 builder.Services.AddDomainServices();
 
 static void AddCustomerData(WebApplication app)
@@ -33,63 +29,46 @@ static void AddCustomerData(WebApplication app)
     var scope = app.Services.CreateScope();
     var db = scope.ServiceProvider.GetService<LibraryDbContext>();
 
-    //modelBuilder.Entity<Blog>().HasData(new Blog { BlogId = 1, Url = "http://sample.com" });
-
-    var book1 = new Book
+    List<Book> bookList = new List<Book>();
+    for (int i = 0; i < 10; i++)
     {
-        Title = "dgkh",
-        Cover = "b",
-        Content = "tergrg",
-        Author = "g1",
-        Genre = "b1"
-    };
-    var book2 = new Book
-    {
-        Title = "olqw",
-        Cover = "c",
-        Content = "ty-jkwn",
-        Author = "o2",
-        Genre = "b2"
-    };
-    var book3 = new Book
-    {
-        Title = "akviw",
-        Cover = "d",
-        Content = "mrqr34",
-        Author = "a3",
-        Genre = "b3"
-    };
+        var book = new Book
+        {
+            Title = Guid.NewGuid().ToString(),
+            Cover = Guid.NewGuid().ToString(),
+            Content = Guid.NewGuid().ToString(),
+            Author = Guid.NewGuid().ToString(),
+            Genre = Guid.NewGuid().ToString()
+        };
+        bookList.Add(book);
+    }
 
     Random r = new Random();
     List<Rating> ratingList = new List<Rating>();
     List<Review> reviewList = new List<Review>();
 
-    for (int i = 0; i < 50; i++)
+    for (int i = 0; i < 150; i++)
     {
         var rating = new Rating
         {
-            BookID = r.Next(1,4),
+            BookID = r.Next(1,bookList.Count() + 1),
             Score = r.Next(1,6)
         };
         ratingList.Add(rating);
     }
 
-    for (int i = 0; i < 50; i++)
+    for (int i = 0; i < 150; i++)
     {
         var review = new Review
         {
-            BookID = r.Next(1,4),
+            BookID = r.Next(1,bookList.Count() + 1),
             Message = $"message{i}",
             Reviewer = $"reviewer{i}"
         };
         reviewList.Add(review);
     }
 
-
-    db.Books.Add(book1);
-    db.Books.Add(book2);
-    db.Books.Add(book3);
-
+    db.Books.AddRange(bookList);
     db.Ratings.AddRange(ratingList);
     db.Reviews.AddRange(reviewList);
 
@@ -97,7 +76,6 @@ static void AddCustomerData(WebApplication app)
 }
 
 var app = builder.Build();
-//temp
 AddCustomerData(app);
 
 
