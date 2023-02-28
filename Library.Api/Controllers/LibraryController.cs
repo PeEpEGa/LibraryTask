@@ -21,7 +21,7 @@ public class LibraryController : BaseController
     }
 
 
-    [HttpGet("(OrderByProp)")]
+    [HttpGet("GetAllBooks")]
     public Task<IActionResult> GetBooks(string ord, CancellationToken cancellationToken)
     {
         //[FromRoute] 
