@@ -1,0 +1,12 @@
+C:\Users\Виталий\WebsiteProjects\LibraryTask\Library.Contracts\bin\Debug\net6.0\Library.Contracts.deps.json
+C:\Users\Виталий\WebsiteProjects\LibraryTask\Library.Contracts\bin\Debug\net6.0\Library.Contracts.dll
+C:\Users\Виталий\WebsiteProjects\LibraryTask\Library.Contracts\bin\Debug\net6.0\Library.Contracts.pdb
+C:\Users\Виталий\WebsiteProjects\LibraryTask\Library.Contracts\obj\Debug\net6.0\Library.Contracts.csproj.AssemblyReference.cache
+C:\Users\Виталий\WebsiteProjects\LibraryTask\Library.Contracts\obj\Debug\net6.0\Library.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Виталий\WebsiteProjects\LibraryTask\Library.Contracts\obj\Debug\net6.0\Library.Contracts.AssemblyInfoInputs.cache
+C:\Users\Виталий\WebsiteProjects\LibraryTask\Library.Contracts\obj\Debug\net6.0\Library.Contracts.AssemblyInfo.cs
+C:\Users\Виталий\WebsiteProjects\LibraryTask\Library.Contracts\obj\Debug\net6.0\Library.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\Виталий\WebsiteProjects\LibraryTask\Library.Contracts\obj\Debug\net6.0\Library.Contracts.dll
+C:\Users\Виталий\WebsiteProjects\LibraryTask\Library.Contracts\obj\Debug\net6.0\refint\Library.Contracts.dll
+C:\Users\Виталий\WebsiteProjects\LibraryTask\Library.Contracts\obj\Debug\net6.0\Library.Contracts.pdb
+C:\Users\Виталий\WebsiteProjects\LibraryTask\Library.Contracts\obj\Debug\net6.0\ref\Library.Contracts.dll
